@@ -1,1 +1,29 @@
-/*Checkerino*/
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Chakra Petch', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+   font-size: 5vmin;
+    color: gray;
+}
+
+.board {
+    height: 60vh;
+    width: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: gold
+}
+
+
+
