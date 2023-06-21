@@ -17,16 +17,13 @@ header {
     color: gray;
 }
 
-board {
-    height: 60vh;
-    width: 60vh;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: gold
+#board {
+display: grid;
+grid-template-columns: repeat(10, 6vmin);
+grid-template-rows: repeat(10, 6vmin);
+gap: 0.1vmin;
 }
 
-board > div {
-    height: 6vh;
-    width: 6vh;
-  }
-
+#board > div {
+    border: 0.2vmin solid gray;
+}
