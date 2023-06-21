@@ -22,8 +22,31 @@ display: grid;
 grid-template-columns: repeat(10, 6vmin);
 grid-template-rows: repeat(10, 6vmin);
 gap: 0.1vmin;
+margin-top: 3vmin;
 }
 
 #board > div {
     border: 0.2vmin solid gray;
+    
 }
+
+#board > div:hover {
+        background-color: lightgray;
+}
+
+button {
+    padding: 1vmin;
+    font-size: 2vmin;
+    color: gray;
+}
+
+h4 {
+    font-size: 3vmin;
+    color: gray;
+}
+
+/*
+<tile element>:hover {
+    background-color: darkgray; 
+}
+*/
