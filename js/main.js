@@ -96,13 +96,16 @@ const COLORS = {
     }
   }
 
-//  function checkMine(){
-//  }
 
   //boolean mines
     //get/setAttribute
-  
+  //To do:
   //function checkMine + eventListener "click"
-  // if (board[row][column] === mine || 'mine') {
+  // if (board[row][column] === mine || "mine") {
   //     gameOver();
   // }
+
+  //revealCell
+
+  //checkAdjacent
+  //  flood recursion 0 = ""
