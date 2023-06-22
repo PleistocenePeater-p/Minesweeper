@@ -40,7 +40,7 @@ const COLORS = {
   
   
   /*----- event listeners -----*/
-  
+  document.getElementById("board").addEventListener("click", handleDrop);
   
   /*----- functions -----*/
   init();
@@ -58,25 +58,58 @@ const COLORS = {
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],  // col 8
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],  // col 9
     ];
-    console.table(board);
+    console.table(board); //logs all mine locations as array table
     gameOver = null;
     render();
   }
   
+  function handleDrop(evt) {
+    console.log(evt.target.innerText); //logs clicked cell's value
+
+//Copied from renderBoard() below, trying to obtain column index and row index
+    evt.target(function(colArr, colIdx) {
+      colArr.forEach(function(cellVal, rowIdx) {
+//        console.log(cellVal, rowIdx) //logs all cells positions
+        const cellId = `c${colIdx}r${rowIdx}`;
+      })
+    });
+
+
+
+
+
+    const cellId = board.indexOf(evt.target); //keeping this in here for posterity/ConnectFour
+    const cellIdValue = evt.target.innerText;
+    if (cellIdValue === -1 || gameOver) return; //guard
+    if (cellIdValue === mine) {
+      gameOver();
+    }
+//    if (cellIdValue != mine) {
+//
+//    }
+    
+
+    render();
+  }
+
+//  function gameOver(){};
+
+  //=================Render & Related Functions========================//
   function render() {
     renderBoard();
     makeMines();
     renderControls(); //hide/show UI elements/controls
+
   }
   function renderBoard() {
     board.forEach(function(colArr, colIdx) {
       colArr.forEach(function(cellVal, rowIdx) {
-        console.log(cellVal, rowIdx)
+//        console.log(cellVal, rowIdx) //logs all cells positions
         const cellId = `c${colIdx}r${rowIdx}`;
         const cellEl = document.getElementById(cellId);
         cellEl.style.backgroundColor = COLORS[cellVal];
         //            cellEl.style.color = ADJACENT_INTEGER['1'];
-        cellEl.innerText = INNER_TEXT[0];
+        cellEl.innerText = 1;
       });
     });
   };
@@ -97,15 +130,14 @@ const COLORS = {
   }
 
 
-  //boolean mines
-    //get/setAttribute
-  //To do:
-  //function checkMine + eventListener "click"
-  // if (board[row][column] === mine || "mine") {
-  //     gameOver();
-  // }
+//===Idea bank===
+//boolean mines
+//get/setAttribute
+//.style.visibility = gameOver ? "visible": "hidden"; vid4, 42:45
+//vid4, 50:30 const hideMarker = !board[colIdx].includes(0) //hide marker if no 0s in array// || winner //or if there's a winner
+//  
 
-  //revealCell
+//revealMines
 
-  //checkAdjacent
-  //  flood recursion 0 = ""
+//checkAdjacent
+//  flood recursion 0 = ""
