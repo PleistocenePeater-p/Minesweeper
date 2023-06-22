@@ -60,23 +60,32 @@ const COLORS = {
     ];
     console.table(board); //logs all mine locations as array table
     gameOver = null;
+    
+    
     render();
+    
+    
   }
   
   function handleDrop(evt) {
-    console.log(evt.target.innerText); //logs clicked cell's value
+    console.log(evt.target.id,"inner text"); //logs clicked cell's value
+    var cell = evt.target.id;
+    const col = evt.target.id[1] // logs the column
+    const row = evt.target.id[3] // logs the row
+    
+    console.log(cell);
+    
+    
+
+
 
 //Copied from renderBoard() below, trying to obtain column index and row index
-    evt.target(function(colArr, colIdx) {
-      colArr.forEach(function(cellVal, rowIdx) {
-//        console.log(cellVal, rowIdx) //logs all cells positions
-        const cellId = `c${colIdx}r${rowIdx}`;
-      })
-    });
-
-
-
-
+//     evt.target(function(colArr, colIdx) {
+//       colArr.forEach(function(cellVal, rowIdx) {
+// //        console.log(cellVal, rowIdx) //logs all cells positions
+//         const cellId = `c${colIdx}r${rowIdx}`;
+//       })
+//     });
 
     const cellId = board.indexOf(evt.target); //keeping this in here for posterity/ConnectFour
     const cellIdValue = evt.target.innerText;
@@ -87,8 +96,6 @@ const COLORS = {
 //    if (cellIdValue != mine) {
 //
 //    }
-    
-
     render();
   }
 
