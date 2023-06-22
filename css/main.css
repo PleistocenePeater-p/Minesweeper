@@ -26,12 +26,12 @@ margin-top: 3vmin;
 }
 
 #board > div {
-    border: 0.2vmin solid gray;
+    border: 0.2vmin solid rgb(238, 238, 238);
     
 }
 
 #board > div:hover {
-        background-color: lightgray;
+        background-color: rgb(195, 195, 195);
 }
 
 button {
